@@ -1,15 +1,20 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Text.Json.Serialization;
 
 public class Room
 {
     [BsonId]
+    [JsonIgnore]
     public ObjectId Id { get; set; }
 
+    public string id => Id.ToString();
+
     // Use default initialization to ensure non-nullable properties are initialized
-    public string Pictures { get; set; } = string.Empty; // or string? Username { get; set; }
-    public string Description { get; set; } = string.Empty; // or string? Name { get; set; }
-    public string Location { get; set; } = string.Empty; // or string? Number { get; set; }
-    public string Username { get; set; } = string.Empty; // or string? Email { get; set; }
-    public string ProfilePicture { get; set; } = string.Empty; // or string? ProfilePicture { get; set; }
+    public string UserId { get; set; } = string.Empty;
+    public string Pictures { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string Location { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string ProfilePicture { get; set; } = string.Empty;
 }
