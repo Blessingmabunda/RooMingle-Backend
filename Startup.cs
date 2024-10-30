@@ -36,7 +36,7 @@ public class Startup
         {
             c.SwaggerDoc("v1", new OpenApiInfo 
             { 
-                Title = "User and Room API", 
+                Title = "RooMingle API", 
                 Version = "v1" 
             });
         });
@@ -48,7 +48,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
             app.UseSwagger(); // Use Swagger
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "User and Room API v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RooMingle API v1"));
         }
         else
         {
