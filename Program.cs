@@ -13,5 +13,11 @@ public class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
+
+                // Change the port to avoid conflicts
+                webBuilder.UseUrls("http://localhost:5050");
+
+                // Optionally, add exception handling for startup errors
+                webBuilder.CaptureStartupErrors(true);
             });
 }
