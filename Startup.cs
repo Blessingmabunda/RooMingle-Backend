@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserApi.Models;
+using RoomApi.Models; // Added to import RoomMongoDBSettings
 
 public class Startup
 {
@@ -15,11 +16,20 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.Configure<MongoDBSettings>(
-            Configuration.GetSection(nameof(MongoDBSettings)));
+        // Configure UserMongoDBSettings
+        services.Configure<UserMongoDBSettings>(
+            Configuration.GetSection(nameof(UserMongoDBSettings)));
+
+        // Configure RoomMongoDBSettings
+        services.Configure<RoomMongoDBSettings>(
+            Configuration.GetSection(nameof(RoomMongoDBSettings)));
 
         services.AddSingleton<IUserRepository, UserRepository>();
         services.AddSingleton<IUserService, UserService>();
+        // You may need to add similar repository and service registrations for Room
+         services.AddSingleton<IRoomRepository, RoomRepository>();
+         services.AddSingleton<IRoomService, RoomService>();
+
         services.AddControllers();
     }
 
