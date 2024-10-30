@@ -118,3 +118,4 @@
 /Users/softidoc/Documents/C#/RooMingle/obj/Debug/net8.0/MyApi.pdb
 /Users/softidoc/Documents/C#/RooMingle/obj/Debug/net8.0/MyApi.genruntimeconfig.cache
 /Users/softidoc/Documents/C#/RooMingle/obj/Debug/net8.0/ref/MyApi.dll
+/Users/softidoc/Documents/C#/RooMingle/obj/Debug/net8.0/MyApi.sourcelink.json

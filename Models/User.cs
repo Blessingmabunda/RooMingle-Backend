@@ -13,5 +13,7 @@ namespace UserApi.Models
         public string Number { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }  // Store hashed password
+        
+        public string ProfilePicture { get; set; }  // Base64-encoded profile picture
     }
 }
