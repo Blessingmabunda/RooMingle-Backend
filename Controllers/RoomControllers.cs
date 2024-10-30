@@ -16,7 +16,7 @@ namespace RoomApi.Controllers
         _roomService = roomService;
     }
 
-        [HttpPost("rooms/register")]
+        [HttpPost("register-room")]
         public async Task<ActionResult<Room>> RegisterRoom(Room room)
         {
             var registeredRoom = await _roomService.RegisterAsync(room);
@@ -34,7 +34,7 @@ namespace RoomApi.Controllers
             return Ok(room); // Return room
         }
 
-        [HttpPut("rooms/update")]
+        [HttpPut("update-room")]
         public async Task<ActionResult<Room>> UpdateRoom(Room room)
         {
             var updatedRoom = await _roomService.UpdateRoomAsync(room);
@@ -52,7 +52,7 @@ namespace RoomApi.Controllers
             return NoContent(); // Successfully deleted
         }
 
-        [HttpGet("rooms/all")]
+        [HttpGet("get-all-rooms")]
         public async Task<ActionResult<IEnumerable<Room>>> GetAllRooms()
         {
             var rooms = await _roomService.GetAllRoomsAsync();
