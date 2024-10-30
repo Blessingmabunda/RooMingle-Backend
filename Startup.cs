@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using UserApi.Models;
-using RoomApi.Models; // Added to import RoomMongoDBSettings
+using RoomApi.Models;
+using Microsoft.OpenApi.Models;
 
 public class Startup
 {
@@ -11,26 +13,33 @@ public class Startup
 
     public Startup(IConfiguration configuration)
     {
-        Configuration = configuration; // Initialize Configuration
+        Configuration = configuration;
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
-        // Configure UserMongoDBSettings
         services.Configure<UserMongoDBSettings>(
             Configuration.GetSection(nameof(UserMongoDBSettings)));
 
-        // Configure RoomMongoDBSettings
         services.Configure<RoomMongoDBSettings>(
             Configuration.GetSection(nameof(RoomMongoDBSettings)));
 
         services.AddSingleton<IUserRepository, UserRepository>();
         services.AddSingleton<IUserService, UserService>();
-        // You may need to add similar repository and service registrations for Room
-         services.AddSingleton<IRoomRepository, RoomRepository>();
-         services.AddSingleton<IRoomService, RoomService>();
+        services.AddSingleton<IRoomRepository, RoomRepository>();
+        services.AddSingleton<IRoomService, RoomService>();
 
         services.AddControllers();
+
+        // Add Swagger services
+        services.AddSwaggerGen(c =>
+        {
+            c.SwaggerDoc("v1", new OpenApiInfo 
+            { 
+                Title = "User and Room API", 
+                Version = "v1" 
+            });
+        });
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -38,6 +47,8 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
+            app.UseSwagger(); // Use Swagger
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "User and Room API v1"));
         }
         else
         {
@@ -51,7 +62,7 @@ public class Startup
         app.UseAuthorization();
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapControllers(); // Map controller routes
+            endpoints.MapControllers();
         });
     }
 }

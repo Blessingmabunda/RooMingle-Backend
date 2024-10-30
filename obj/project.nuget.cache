@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yZog2DGQE1M=",
+  "dgSpecHash": "vqAfxkrs0Ic=",
   "success": true,
   "projectFilePath": "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj",
   "expectedPackageFiles": [
@@ -35,10 +35,10 @@
     "/Users/softidoc/.nuget/packages/mongodb.driver/3.0.0/mongodb.driver.3.0.0.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/snappier/1.0.0/snappier.1.0.0.nupkg.sha512",
-    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
-    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swagger/6.6.2/swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
-    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.6.2/swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
-    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.6.2/swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
+    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore/6.9.0/swashbuckle.aspnetcore.6.9.0.nupkg.sha512",
+    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swagger/6.9.0/swashbuckle.aspnetcore.swagger.6.9.0.nupkg.sha512",
+    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.9.0/swashbuckle.aspnetcore.swaggergen.6.9.0.nupkg.sha512",
+    "/Users/softidoc/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.9.0/swashbuckle.aspnetcore.swaggerui.6.9.0.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/system.identitymodel.tokens.jwt/7.1.2/system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",

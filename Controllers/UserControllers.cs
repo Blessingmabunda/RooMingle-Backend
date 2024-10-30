@@ -15,7 +15,7 @@ public class UsersController : ControllerBase
         _userService = userService;
     }
 
-    [HttpPost("register")]
+    [HttpPost("register-user")]
     public async Task<ActionResult<User>> Register(User user)
     {
         var registeredUser = await _userService.RegisterAsync(user);
@@ -33,7 +33,7 @@ public class UsersController : ControllerBase
         return user; // Successful login
     }
 
-    [HttpPut("update")]
+    [HttpPut("update-user")]
     public async Task<ActionResult<User>> UpdateUser(User user)
     {
         var updatedUser = await _userService.UpdateUserAsync(user);
@@ -51,7 +51,7 @@ public class UsersController : ControllerBase
         return NoContent(); // Successfully deleted
     }
 
-    [HttpGet("all")]
+    [HttpGet("get-all-user")]
     public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
     {
         var users = await _userService.GetAllUsersAsync();
