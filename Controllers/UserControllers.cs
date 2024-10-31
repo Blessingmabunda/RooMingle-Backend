@@ -52,7 +52,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet("get-all-user")]
-    public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
+    public async Task<ActionResult> GetAllUsers()
     {
         var users = await _userService.GetAllUsersAsync();
         return Ok(users); // Return all users

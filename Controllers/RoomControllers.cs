@@ -24,7 +24,7 @@ namespace RoomApi.Controllers
         }
 
         [HttpGet("rooms/{location}")]
-        public async Task<ActionResult<Room>> GetRoomByLocation(string location)
+        public async Task<ActionResult> GetRoomByLocation(string location)
         {
             var room = await _roomService.GetByLocationAsync(location);
             if (room == null)
@@ -53,7 +53,7 @@ namespace RoomApi.Controllers
         }
 
         [HttpGet("get-all-rooms")]
-        public async Task<ActionResult<IEnumerable<Room>>> GetAllRooms()
+        public async Task<ActionResult> GetAllRooms()
         {
             var rooms = await _roomService.GetAllRoomsAsync();
             return Ok(rooms); // Return all rooms
