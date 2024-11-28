@@ -60,7 +60,7 @@ namespace RoomApi.Controllers
             return Ok(rooms); // Return all rooms
         }
 
-        [HttpGet("rooms/user/{userId}")]
+        [HttpGet("get-rooms-by/{userId}")]
         public async Task<ActionResult> GetRoomByUser(string userId)
         {
             var room = await _roomService.GetByUserAsync(userId);
