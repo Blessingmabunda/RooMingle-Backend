@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RoomApi.Models;
+using MongoDB.Bson;
 
 using System.Threading.Tasks;
 
@@ -7,14 +8,14 @@ namespace RoomApi.Controllers
 {
     [ApiController]
     [Route("api/")]
-  public class RoomController : ControllerBase
-{
-    private readonly IRoomService _roomService;
-
-    public RoomController(IRoomService roomService)
+    public class RoomController : ControllerBase
     {
-        _roomService = roomService;
-    }
+        private readonly IRoomService _roomService;
+
+        public RoomController(IRoomService roomService)
+        {
+            _roomService = roomService;
+        }
 
         [HttpPost("register-room")]
         public async Task<ActionResult<Room>> RegisterRoom(Room room)
@@ -45,10 +46,10 @@ namespace RoomApi.Controllers
             return Ok(updatedRoom); // Return updated room
         }
 
-        [HttpDelete("rooms/delete/{location}")]
-        public async Task<ActionResult> DeleteRoom(string location)
+        [HttpDelete("rooms/delete/{id}")]
+        public async Task<ActionResult> DeleteRoom(string id)
         {
-            await _roomService.DeleteRoomAsync(location);
+            await _roomService.DeleteRoomAsync(id);
             return NoContent(); // Successfully deleted
         }
 
@@ -57,6 +58,17 @@ namespace RoomApi.Controllers
         {
             var rooms = await _roomService.GetAllRoomsAsync();
             return Ok(rooms); // Return all rooms
+        }
+
+        [HttpGet("rooms/user/{userId}")]
+        public async Task<ActionResult> GetRoomByUser(string userId)
+        {
+            var room = await _roomService.GetByUserAsync(userId);
+            if (room == null)
+            {
+                return NotFound(); // Room not found
+            }
+            return Ok(room); // Return room
         }
     }
 }
