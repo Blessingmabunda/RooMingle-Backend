@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vqAfxkrs0Ic=",
+  "dgSpecHash": "tb3daTkHN28=",
   "success": true,
-  "projectFilePath": "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj",
+  "projectFilePath": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj",
   "expectedPackageFiles": [
     "/Users/softidoc/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/softidoc/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",

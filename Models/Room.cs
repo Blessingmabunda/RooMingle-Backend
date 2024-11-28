@@ -14,6 +14,8 @@ public class Room
     public string UserId { get; set; } = string.Empty;
     public string Pictures { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+     public string Price { get; set; } = string.Empty;
+      public string number { get; set; } = string.Empty;
     public string Location { get; set; } = string.Empty;
     public string Username { get; set; } = string.Empty;
     public string ProfilePicture { get; set; } = string.Empty;

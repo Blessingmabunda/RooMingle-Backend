@@ -22,16 +22,25 @@ public class UsersController : ControllerBase
         return CreatedAtAction(nameof(Register), new { id = registeredUser.Id }, registeredUser);
     }
 
-    [HttpPost("login")]
-    public async Task<ActionResult<User>> Login(string username, string password)
+   [HttpPost("login")]
+public async Task<ActionResult> Login(string username, string password)
+{
+    var user = await _userService.LoginAsync(username, password);
+    if (user == null)
     {
-        var user = await _userService.LoginAsync(username, password);
-        if (user == null)
-        {
-            return Unauthorized(); // Invalid credentials
-        }
-        return user; // Successful login
+        return Unauthorized(); // Invalid credentials
     }
+
+    // Serialize the user object to JSON for logging
+    var userJson = System.Text.Json.JsonSerializer.Serialize(user);
+
+    // Log the serialized user JSON
+    Console.WriteLine(userJson);
+
+    // Return the user object as JSON response
+    return Ok(user);
+}
+
 
     [HttpPut("update-user")]
     public async Task<ActionResult<User>> UpdateUser(User user)

@@ -18,26 +18,40 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        // Configure MongoDB settings
         services.Configure<UserMongoDBSettings>(
             Configuration.GetSection(nameof(UserMongoDBSettings)));
-
         services.Configure<RoomMongoDBSettings>(
             Configuration.GetSection(nameof(RoomMongoDBSettings)));
 
+        // Register repositories and services
         services.AddSingleton<IUserRepository, UserRepository>();
         services.AddSingleton<IUserService, UserService>();
         services.AddSingleton<IRoomRepository, RoomRepository>();
         services.AddSingleton<IRoomService, RoomService>();
 
+        // Add controllers
         services.AddControllers();
 
-        // Add Swagger services
+        // Add Swagger services for API documentation
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo 
             { 
                 Title = "RooMingle API", 
                 Version = "v1" 
+            });
+        });
+
+        // Add CORS support
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowFrontend", builder =>
+            {
+                builder.WithOrigins("http://localhost:5173")  // Frontend URL
+                       .AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .AllowCredentials();  // Include credentials if necessary (e.g., cookies or headers)
             });
         });
     }
@@ -47,7 +61,7 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
-            app.UseSwagger(); // Use Swagger
+            app.UseSwagger(); // Enable Swagger
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RooMingle API v1"));
         }
         else
@@ -56,10 +70,15 @@ public class Startup
             app.UseHsts();
         }
 
+        // Apply CORS policy
+        app.UseCors("AllowFrontend");
+
+        // Middleware configuration
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
         app.UseAuthorization();
+
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();

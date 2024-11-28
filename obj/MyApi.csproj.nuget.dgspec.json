@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj": {}
+    "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj": {}
   },
   "projects": {
-    "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj": {
+    "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj",
+        "projectUniqueName": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj",
         "projectName": "MyApi",
-        "projectPath": "/Users/softidoc/Documents/C#/RooMingle/MyApi.csproj",
+        "projectPath": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj",
         "packagesPath": "/Users/softidoc/.nuget/packages/",
-        "outputPath": "/Users/softidoc/Documents/C#/RooMingle/obj/",
+        "outputPath": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/softidoc/.nuget/NuGet/NuGet.Config"
