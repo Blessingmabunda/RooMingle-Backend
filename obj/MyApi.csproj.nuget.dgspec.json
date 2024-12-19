@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj": {}
+    "/Users/moraswiphineaslekgothoane/Desktop/RooMingle/RooMingle-Backend/MyApi.csproj": {}
   },
   "projects": {
-    "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj": {
+    "/Users/moraswiphineaslekgothoane/Desktop/RooMingle/RooMingle-Backend/MyApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj",
+        "projectUniqueName": "/Users/moraswiphineaslekgothoane/Desktop/RooMingle/RooMingle-Backend/MyApi.csproj",
         "projectName": "MyApi",
-        "projectPath": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/MyApi.csproj",
-        "packagesPath": "/Users/softidoc/.nuget/packages/",
-        "outputPath": "/Users/softidoc/Documents/MyProjects/C#/RooMingle/obj/",
+        "projectPath": "/Users/moraswiphineaslekgothoane/Desktop/RooMingle/RooMingle-Backend/MyApi.csproj",
+        "packagesPath": "/Users/moraswiphineaslekgothoane/.nuget/packages/",
+        "outputPath": "/Users/moraswiphineaslekgothoane/Desktop/RooMingle/RooMingle-Backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/softidoc/.nuget/NuGet/NuGet.Config"
+          "/Users/moraswiphineaslekgothoane/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -37,11 +37,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "BCrypt.Net-Next": {
               "target": "Package",
@@ -107,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
